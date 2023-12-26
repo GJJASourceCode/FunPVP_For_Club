@@ -1472,7 +1472,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   meleeAttackDistance: 5
-  maxSpeed: 10
+  maxSpeed: 20
   pv: {fileID: 0}
 --- !u!114 &1549681960063191409
 MonoBehaviour:
