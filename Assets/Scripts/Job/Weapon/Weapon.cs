@@ -102,7 +102,7 @@ public class Weapon : MonoBehaviour
         //Debug.Log("CastSpell");
         GameObject instantMagic_spell = Instantiate(
             Magic_spell,
-            player.transform.position + player.transform.forward * 2 + Vector3.up * 4.0f,
+            player.transform.position + player.transform.forward * 5 + Vector3.up * 4.0f,
             transform.rotation
         );
         instantMagic_spell.GetComponent<Magic_Spell>().ownerPV = pv;

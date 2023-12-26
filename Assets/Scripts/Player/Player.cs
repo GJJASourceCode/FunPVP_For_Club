@@ -104,6 +104,10 @@ public class Player : MonoBehaviour, IPunObservable
                 if (!player.pv.IsMine)
                 {
                     player.pv.RPC("TakeDamage", RpcTarget.All, job.attack);
+                    if (TryGetComponent(out Assassin a))
+                    {
+                        pv.RPC("UseAssassinSkill", RpcTarget.All);
+                    }
                     return;
                 }
             }
