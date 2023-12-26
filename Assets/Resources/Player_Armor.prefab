@@ -1017,11 +1017,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15000
-  jumpForce: 8
+  jumpForce: 15
   groundLayer:
     serializedVersion: 2
     m_Bits: 4294967295
-  meleeAttackDistance: 3
   maxSpeed: 4
   pv: {fileID: 0}
 --- !u!114 &4765245756332569817

@@ -25,23 +25,41 @@ public class SelectJob : MonoBehaviourPunCallbacks
 
     private List<List<String>> jobDescriptionList = new List<List<String>>
     {
-        new List<String> { "탱커", "80", "10", "Q키를 누를 시 30초간 쉴드가 플레이어 주위를 돌며 보호합니다. (쿨타임 60초)" },
+        new List<String>
+        {
+            "탱커",
+            "100",
+            "10",
+            "이 전사의 방패는 매우 단단합니다. 하지만 너무 무거운 탓에 자신도 버티기 어려워합니다.\nQ키를 누를 시 방패를 소환해 자신을 보호합니다."
+        },
         new List<String>
         {
             "암살자",
-            "55",
-            "20",
-            "Q키를 누를 시 몸을 숨깁니다. 그와 동시에 검은색 연기가 따라옵니다. 이동 속도가 가장 빠릅니다."
+            "40",
+            "5",
+            "Q키를 누를 시 자신의 모습을 연막으로 숨깁니다. 하지만 연막을 숨기는 법은 알지 못했나 봅니다."
         },
-        new List<String> { "겜블러", "30", "Random", "데미지가 -30~30까지인 주사위를 던집니다." },
+        new List<String>
+        {
+            "겜블러",
+            "Random",
+            "Random",
+            "인생은 한방!\n도박에 중독되어 자신의 체력과 데미지마저 도박으로 결정합니다.\nHP:20~50,ATK:-5~15"
+        },
         new List<String>
         {
             "거너",
-            "45",
-            "5",
-            "에너지가 담긴 탄을 발사합니다. 데미지가 5인 총알 100발이 있습니다. 재장전은 불가능 합니다."
+            "20",
+            "2",
+            "사거리가 매우 긴 총을 발사합니다. 하지만 총알은 두고 왔나보네요.\n총알이 50발로 한정되어 있습니다."
         },
-        new List<String> { "매지션", "40", "1", "중력의 영향을 받는 불 마법을 구사합니다. 무한으로 마법이 가능하나 데미지가 1입니다." },
+        new List<String>
+        {
+            "매지션",
+            "30",
+            "1",
+            "라이터 수준의 불의 마법을 다루는 겉멋 마법사입니다. 겉멋에 너무 치중한 나머지 데미지를 높이는 법은 알지 못했나 봅니다."
+        },
     };
 
     void Start()
@@ -81,29 +99,33 @@ public class SelectJob : MonoBehaviourPunCallbacks
         PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
         submitJob.gameObject.SetActive(false);
 
-        if (!PhotonNetwork.IsMasterClient) return;
+        if (!PhotonNetwork.IsMasterClient)
+            return;
 
         CheckAllPlayersReady();
-    
-   }
+    }
 
-
-    public override void OnPlayerPropertiesUpdate(Photon.Realtime.Player targetPlayer, ExitGames.Client.Photon.Hashtable changedProps)
+    public override void OnPlayerPropertiesUpdate(
+        Photon.Realtime.Player targetPlayer,
+        ExitGames.Client.Photon.Hashtable changedProps
+    )
     {
-        if (!PhotonNetwork.IsMasterClient) return;
+        if (!PhotonNetwork.IsMasterClient)
+            return;
 
-        if (!changedProps.ContainsKey("Ready")) return;
+        if (!changedProps.ContainsKey("Ready"))
+            return;
 
         CheckAllPlayersReady();
     }
 
     public override void OnMasterClientSwitched(Photon.Realtime.Player newMasterClient)
     {
-        if (newMasterClient != PhotonNetwork.LocalPlayer) return;
+        if (newMasterClient != PhotonNetwork.LocalPlayer)
+            return;
 
         CheckAllPlayersReady();
     }
-
 
     private void CheckAllPlayersReady()
     {
@@ -111,7 +133,11 @@ public class SelectJob : MonoBehaviourPunCallbacks
 
         // This is just using a shorthand via Linq instead of having a loop with a counter
         // for checking whether all players in the list have the key "Ready" in their custom properties
-        if (players.All(p => p.CustomProperties.ContainsKey("Ready") && (bool)p.CustomProperties["Ready"]))
+        if (
+            players.All(
+                p => p.CustomProperties.ContainsKey("Ready") && (bool)p.CustomProperties["Ready"]
+            )
+        )
         {
             Debug.Log("All players are ready!");
             PhotonNetwork.LoadLevel("Battle_Scenes");

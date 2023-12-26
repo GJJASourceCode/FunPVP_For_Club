@@ -222,6 +222,12 @@ public class Player : MonoBehaviour, IPunObservable
         wDown = Input.GetButton("Walk");
         jDown = Input.GetButtonDown("Jump");
         fDown = Input.GetButton("Fire1");
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, 1.3f, groundLayer);
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            Jump();
+        }
     }
 
     void Move()
@@ -229,9 +235,9 @@ public class Player : MonoBehaviour, IPunObservable
         moveVec = (transform.forward * vAxis + transform.right * hAxis).normalized;
 
         if (wDown)
-            rb.AddForce(moveVec * speed * 60.0f * Time.deltaTime);
+            rb.AddForce(moveVec * speed * 60.0f * Time.fixedDeltaTime);
         else
-            rb.AddForce(moveVec * speed * 5.0f * Time.deltaTime);
+            rb.AddForce(moveVec * speed * 5.0f * Time.fixedDeltaTime);
 
         Vector3 temp = Vector3.ClampMagnitude(
             new Vector3(rb.velocity.x, 10f, rb.velocity.z),
@@ -241,13 +247,6 @@ public class Player : MonoBehaviour, IPunObservable
 
         anim.SetBool("isWalk", moveVec != Vector3.zero);
         anim.SetBool("isRun", wDown);
-
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, 2.0f, groundLayer);
-
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-            Jump();
-        }
     }
 
     public void Jump()
