@@ -6,11 +6,6 @@ public class Roll_the_Dice : MonoBehaviour
     public int damage;
     public PhotonView ownerPV;
 
-    void Start()
-    {
-        damage = Random.Range(-31, 31);
-    }
-
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Floor")
