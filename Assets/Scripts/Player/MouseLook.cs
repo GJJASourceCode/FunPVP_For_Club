@@ -6,8 +6,8 @@ using UnityEngine;
 public class MouseLook : MonoBehaviour
 {
     private PhotonView pv;
-    public float sensitivityX = 15.0f;
-    public float sensitivityY = 15.0f;
+    public float sensitivityX = 5.0f;
+    public float sensitivityY = 5.0f;
     public float maxYAngle = 70.0f;
     private float rotationX = 0f;
     private float rotationY = 0f;
@@ -20,7 +20,8 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
-        if (!pv.IsMine) return;
+        if (!pv.IsMine)
+            return;
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
 
