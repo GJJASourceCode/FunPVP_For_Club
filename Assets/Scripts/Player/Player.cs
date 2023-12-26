@@ -155,6 +155,12 @@ public class Player : MonoBehaviour, IPunObservable
         Debug.Log(job.hp);
     }
 
+    [PunRPC]
+    public void Knockback(Vector3 force)
+    {
+        rb.AddForce(force);
+    }
+
     public void HealthCheck()
     {
         if (job.hp <= 0 && !isDied)

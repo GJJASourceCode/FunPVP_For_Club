@@ -107,6 +107,9 @@ public class Weapon : MonoBehaviour
         );
         instantMagic_spell.GetComponent<Magic_Spell>().ownerPV = pv;
         instantMagic_spell.GetComponent<Magic_Spell>().damage = job.attack;
+        instantMagic_spell.GetComponent<Magic_Spell>().direction = player.transform
+            .Find("Mesh Object/Bone_Body/Bone_Neck/Bone_Head")
+            .forward;
         Rigidbody magicSpellRigid = instantMagic_spell.GetComponent<Rigidbody>();
         magicSpellRigid.velocity =
             player.transform.Find("Mesh Object/Bone_Body/Bone_Neck/Bone_Head").forward * 51;

@@ -7,6 +7,7 @@ public class Magic_Spell : MonoBehaviour
 {
     public int damage;
     public PhotonView ownerPV;
+    public Vector3 direction;
 
     void OnCollisionEnter(Collision collision)
     {
@@ -26,6 +27,7 @@ public class Magic_Spell : MonoBehaviour
             var player = collision.gameObject.GetComponent<Player>();
             if (!player.pv.IsMine)
             {
+                player.pv.RPC("Knockback", RpcTarget.All, direction.normalized * 50f);
                 player.pv.RPC("TakeDamage", RpcTarget.All, damage);
                 return;
             }
