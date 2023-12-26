@@ -10,11 +10,11 @@ public class Roll_the_Dice : MonoBehaviour
     {
         if (collision.gameObject.tag == "Floor")
         {
-            Destroy(gameObject, 3);
+            Destroy(gameObject, 1);
         }
         else if (collision.gameObject.tag == "Wall")
         {
-            Destroy(gameObject, 3);
+            Destroy(gameObject, 1);
         }
         else if (collision.gameObject.tag == "Player")
         {
