@@ -27,7 +27,7 @@ public class Magic_Spell : MonoBehaviour
             var player = collision.gameObject.GetComponent<Player>();
             if (!player.pv.IsMine)
             {
-                player.pv.RPC("Knockback", RpcTarget.All, direction.normalized * 500f);
+                player.pv.RPC("Knockback", RpcTarget.All, -direction.normalized * 500f);
                 player.pv.RPC("TakeDamage", RpcTarget.All, damage);
                 return;
             }
