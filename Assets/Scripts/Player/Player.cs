@@ -91,7 +91,7 @@ public class Player : MonoBehaviour, IPunObservable
             transform.forward,
             meleeAttackDistance
         );
-        if (TryGetComponent(out Assassin a) && a.isPlayerVisible)
+        if (TryGetComponent(out Assassin a) && !a.isPlayerVisible)
         {
             pv.RPC("UseAssassinSkill", RpcTarget.All);
         }

@@ -40,7 +40,6 @@ public class Assassin : Job
     public void TogglePlayerVisibility()
     {
         isPlayerVisible = !isPlayerVisible;
-        isEffectVisible = !isEffectVisible;
         Renderer[] renderers = GetComponentsInChildren<Renderer>();
 
         foreach (Renderer renderer in renderers)
@@ -53,6 +52,7 @@ public class Assassin : Job
     {
         if (assassinEffect != null)
         {
+            isEffectVisible = !isEffectVisible;
             assassinEffect.SetActive(isEffectVisible);
         }
     }
