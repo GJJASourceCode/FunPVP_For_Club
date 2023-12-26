@@ -7,15 +7,18 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Start_Scene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
-    path: Assets/Scenes/Lobby_Scene.unity
-    guid: 1c590ef88b0434e45a0236a04c4333dc
+    guid: 5af236897514b074fa3879b93a50d9f9
   - enabled: 1
     path: Assets/Scenes/Battle_Scenes.unity
     guid: 8955e62eb361ad24786b009fdafa92b2
   - enabled: 1
     path: Assets/Scenes/Select_Scene.unity
     guid: 27d544c317a25454087dd7fcceef091a
+  - enabled: 1
+    path: Assets/Scenes/Win_Scene.unity
+    guid: 3a13ad1b021044a2d8910f240af88f27
+  - enabled: 1
+    path: Assets/Scenes/Lose_Scene.unity
+    guid: 049109726b86a16b0b7bcd8839b795de
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: c3227dc4a129458d29e62fc843f18712, type: 2}
