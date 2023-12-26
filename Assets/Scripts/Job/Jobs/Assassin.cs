@@ -11,7 +11,7 @@ public class Assassin : Job
     }
 
     private GameObject assassinEffect;
-    private bool isPlayerVisible = true;
+    public bool isPlayerVisible = true;
     private bool isEffectVisible = false; // 처음에는 이펙트 비활성화
     private PhotonView pv;
 

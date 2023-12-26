@@ -19,7 +19,7 @@ public class Player : MonoBehaviour, IPunObservable
     float fireDelay;
     bool isFireReady;
     Weapon equipWeapon;
-    public float meleeAttackDistance;
+    private float meleeAttackDistance = 5.0f;
 
     Vector3 moveVec;
     Rigidbody rb;
@@ -87,11 +87,11 @@ public class Player : MonoBehaviour, IPunObservable
 
         var hits = Physics.SphereCastAll(
             transform.position,
-            1.0f,
+            2.0f,
             transform.forward,
             meleeAttackDistance
         );
-        if (TryGetComponent(out Assassin a))
+        if (TryGetComponent(out Assassin a) && a.isPlayerVisible)
         {
             pv.RPC("UseAssassinSkill", RpcTarget.All);
         }
