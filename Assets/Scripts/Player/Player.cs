@@ -91,6 +91,10 @@ public class Player : MonoBehaviour, IPunObservable
             transform.forward,
             meleeAttackDistance
         );
+        if (TryGetComponent(out Assassin a))
+        {
+            pv.RPC("UseAssassinSkill", RpcTarget.All);
+        }
         foreach (var hit in hits)
         {
             Debug.Log(hit.collider.gameObject.name);
@@ -104,10 +108,6 @@ public class Player : MonoBehaviour, IPunObservable
                 if (!player.pv.IsMine)
                 {
                     player.pv.RPC("TakeDamage", RpcTarget.All, job.attack);
-                    if (TryGetComponent(out Assassin a))
-                    {
-                        pv.RPC("UseAssassinSkill", RpcTarget.All);
-                    }
                     return;
                 }
             }
