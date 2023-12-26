@@ -6,7 +6,7 @@ public class Assassin : Job
 {
     public override void Initialize()
     {
-        base.hp = 30;
+        base.hp = 40;
         base.attack = 5;
     }
 

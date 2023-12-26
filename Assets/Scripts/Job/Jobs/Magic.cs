@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Magic : Job
 {
-      public override void Initialize()
+    public override void Initialize()
     {
-        base.hp = 20 ; 
+        base.hp = 30;
         base.attack = 1;
     }
 }
