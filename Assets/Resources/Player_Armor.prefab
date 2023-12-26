@@ -1016,13 +1016,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dab820b35ff20a4bb4c05000299b180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15625
-  jumpForce: 5
+  speed: 5000
+  jumpForce: 8
   groundLayer:
     serializedVersion: 2
     m_Bits: 4294967295
   meleeAttackDistance: 3
-  maxSpeed: 0.25
+  maxSpeed: 1
   pv: {fileID: 0}
 --- !u!114 &4765245756332569817
 MonoBehaviour:
@@ -1039,6 +1039,7 @@ MonoBehaviour:
   hp: 80
   attack: 10
   SkillPrefab: {fileID: 7624279173717983699}
+  isSkillActive: 0
 --- !u!114 &5085037104882885194
 MonoBehaviour:
   m_ObjectHideFlags: 0

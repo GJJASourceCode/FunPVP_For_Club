@@ -1466,13 +1466,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dab820b35ff20a4bb4c05000299b180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15625
-  jumpForce: 18
+  speed: 5000
+  jumpForce: 8
   groundLayer:
     serializedVersion: 2
     m_Bits: 4294967295
   meleeAttackDistance: 5
-  maxSpeed: 30
+  maxSpeed: 10
   pv: {fileID: 0}
 --- !u!114 &1549681960063191409
 MonoBehaviour:

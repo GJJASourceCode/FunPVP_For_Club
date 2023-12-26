@@ -5,17 +5,18 @@ public class Shield : Job
 {
     public override void Initialize()
     {
-        base.hp = 20;
-        base.attack = 1;
+        base.hp = 80;
+        base.attack = 10;
     }
 
     public GameObject SkillPrefab;
     public bool isSkillActive = false;
-    private float skillActivationTime = 30f;
-    private float skillTimer = 0f;
 
-    private bool isSkillOnCooldown = false;
-    private float skillCooldownTime = 60f;
+    // private float skillActivationTime = 30f;
+    // private float skillTimer = 0f;
+
+    // private bool isSkillOnCooldown = false;
+    // private float skillCooldownTime = 60f;
     private PhotonView pv;
 
     void Start()
@@ -37,26 +38,30 @@ public class Shield : Job
             return;
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            if (!isSkillActive && !isSkillOnCooldown)
+            if (!isSkillActive)
             {
                 pv.RPC("ActivateSkill", RpcTarget.All);
             }
-        }
-
-        if (isSkillActive)
-        {
-            skillTimer += Time.deltaTime;
-            if (skillTimer >= skillActivationTime)
+            else
             {
                 pv.RPC("DeactivateSkill", RpcTarget.All);
-                StartCooldown();
             }
         }
 
-        if (isSkillOnCooldown)
-        {
-            UpdateCooldown();
-        }
+        // if (isSkillActive)
+        // {
+        //     skillTimer += Time.deltaTime;
+        //     if (skillTimer >= skillActivationTime)
+        //     {
+        //         pv.RPC("DeactivateSkill", RpcTarget.All);
+        //         StartCooldown();
+        //     }
+        // }
+
+        // if (isSkillOnCooldown)
+        // {
+        //     UpdateCooldown();
+        // }
     }
 
     [PunRPC]
@@ -64,7 +69,8 @@ public class Shield : Job
     {
         SkillPrefab.SetActive(true);
         isSkillActive = true;
-        skillTimer = 0f;
+        GetComponent<Player>().maxSpeed = 0.25f;
+        // skillTimer = 0f;
     }
 
     [PunRPC]
@@ -72,20 +78,21 @@ public class Shield : Job
     {
         SkillPrefab.SetActive(false);
         isSkillActive = false;
+        GetComponent<Player>().maxSpeed = 1f;
     }
 
-    void StartCooldown()
-    {
-        isSkillOnCooldown = true;
-        skillTimer = 0f;
-    }
+    // void StartCooldown()
+    // {
+    //     isSkillOnCooldown = true;
+    //     skillTimer = 0f;
+    // }
 
-    void UpdateCooldown()
-    {
-        skillTimer += Time.deltaTime;
-        if (skillTimer >= skillCooldownTime)
-        {
-            isSkillOnCooldown = false;
-        }
-    }
+    // void UpdateCooldown()
+    // {
+    //     skillTimer += Time.deltaTime;
+    //     if (skillTimer >= skillCooldownTime)
+    //     {
+    //         isSkillOnCooldown = false;
+    //     }
+    // }
 }

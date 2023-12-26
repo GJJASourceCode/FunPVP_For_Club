@@ -35,6 +35,8 @@ public class Player : MonoBehaviour, IPunObservable
     private Job job;
     private BoxCollider boxCollider;
     private bool isDied;
+    private float attackDelay = 0.5f;
+    private bool canAttack = true;
 
     void Awake()
     {
@@ -106,6 +108,13 @@ public class Player : MonoBehaviour, IPunObservable
                 }
             }
         }
+    }
+
+    IEnumerator AttackDelayCoroutine()
+    {
+        canAttack = false;
+        yield return new WaitForSeconds(attackDelay);
+        canAttack = true;
     }
 
     [PunRPC]
@@ -187,11 +196,12 @@ public class Player : MonoBehaviour, IPunObservable
 
     void HandleMouseClick()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && canAttack)
         {
             pv.RPC("PlayClickAnimation", RpcTarget.All);
             //PlayClickAnimation();
             AttackMelee();
+            StartCoroutine(AttackDelayCoroutine());
         }
     }
 
