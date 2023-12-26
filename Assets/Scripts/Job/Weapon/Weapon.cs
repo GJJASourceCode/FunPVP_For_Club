@@ -128,7 +128,7 @@ public class Weapon : MonoBehaviour
             transform.rotation
         );
         instantRoll_dice.GetComponent<Roll_the_Dice>().ownerPV = pv;
-        instantRoll_dice.GetComponent<Roll_the_Dice>().damage = Random.Range(-10, 31);
+        instantRoll_dice.GetComponent<Roll_the_Dice>().damage = Random.Range(-5, 16);
         Rigidbody Roll_diceRigid = instantRoll_dice.GetComponent<Rigidbody>();
         Roll_diceRigid.velocity =
             player.transform.Find("Mesh Object/Bone_Body/Bone_Neck/Bone_Head").forward * 50;
