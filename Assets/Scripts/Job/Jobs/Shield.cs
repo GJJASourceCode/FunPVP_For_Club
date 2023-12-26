@@ -5,7 +5,7 @@ public class Shield : Job
 {
     public override void Initialize()
     {
-        base.hp = 1000;
+        base.hp = 100;
         base.attack = 10;
     }
 
