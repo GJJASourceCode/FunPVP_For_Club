@@ -35,7 +35,7 @@ public class Player : MonoBehaviour, IPunObservable
     private Job job;
     private BoxCollider boxCollider;
     private bool isDied;
-    private float attackDelay = 0.5f;
+    private float attackDelay = 1f;
     private bool canAttack = true;
 
     void Awake()
