@@ -216,8 +216,8 @@ MonoBehaviour:
   type: 1
   damage: 0
   rate: 0
-  maxAmmo: 100
-  curAmmo: 100
+  maxAmmo: 50
+  curAmmo: 50
   meleeArea: {fileID: 0}
   bulletPos: {fileID: 2952699869564736126}
   bullet: {fileID: 2340986413121973823, guid: c76f31de8dea5224ea064b04a7ef7ec2, type: 3}

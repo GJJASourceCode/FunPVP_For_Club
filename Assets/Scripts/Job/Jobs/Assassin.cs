@@ -6,8 +6,8 @@ public class Assassin : Job
 {
     public override void Initialize()
     {
-        base.hp = 60;
-        base.attack = 20;
+        base.hp = 30;
+        base.attack = 5;
     }
 
     private GameObject assassinEffect;

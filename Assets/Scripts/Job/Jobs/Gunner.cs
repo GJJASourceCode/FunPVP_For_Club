@@ -7,6 +7,6 @@ public class Gunner : Job
     public override void Initialize()
     {
         base.hp = 20;
-        base.attack = 5;
+        base.attack = 2;
     }
 }
