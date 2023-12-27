@@ -6,8 +6,8 @@ using UnityEngine;
 public class MouseLook : MonoBehaviour
 {
     private PhotonView pv;
-    public float sensitivityX = 5.0f;
-    public float sensitivityY = 5.0f;
+    public float sensitivityX = 0.5f;
+    public float sensitivityY = 0.5f;
     public float maxYAngle = 70.0f;
     private float rotationX = 0f;
     private float rotationY = 0f;

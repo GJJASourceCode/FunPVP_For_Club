@@ -102,7 +102,7 @@ public class Weapon : MonoBehaviour
         //Debug.Log("CastSpell");
         GameObject instantMagic_spell = Instantiate(
             Magic_spell,
-            player.transform.position + player.transform.forward * 5 + Vector3.up * 4.0f,
+            player.transform.position + player.transform.forward * 4f + Vector3.up * 3.5f,
             transform.rotation
         );
         instantMagic_spell.GetComponent<Magic_Spell>().ownerPV = pv;
@@ -127,7 +127,7 @@ public class Weapon : MonoBehaviour
         //Debug.Log("RollDice");
         GameObject instantRoll_dice = Instantiate(
             Dice,
-            transform.position + player.transform.right * 1f + player.transform.forward * 5f,
+            player.transform.position + player.transform.forward * 4f + Vector3.up * 3.5f,
             transform.rotation
         );
         instantRoll_dice.GetComponent<Roll_the_Dice>().ownerPV = pv;

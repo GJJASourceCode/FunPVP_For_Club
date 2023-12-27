@@ -35,9 +35,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16.25409, y: 10.099976}
-  m_SizeDelta: {x: 108.642, y: 40.833}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -38.066833, y: 10.100006}
+  m_SizeDelta: {x: 148.5, y: 40.833}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &1834062501662129897
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -73,7 +73,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1591,9 +1591,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\n[Q\uD0A4\uB97C \uB204\uB974\uBA74 \uC2A4\uD0AC\uC774 \uBC1C\uB3D9 \uD569\uB2C8\uB2E4.]\n\n\uC2A4\uD0AC
-    \uC720\uC9C0 \uC2DC\uAC04\uC740 n\uCD08\uC774\uBA70, \uCFE8\uD0C0\uC784\uC740
-    n\uCD08\uC785\uB2C8\uB2E4."
+  m_Text: "\nQ\uD0A4\uB97C \uB204\uB974\uBA74 \uC5F0\uB9C9\uC73C\uB85C\n\uC790\uC2E0\uC744
+    \uC228\uAE41\uB2C8\uB2E4.\nQ\uD0A4\uB97C \uB2E4\uC2DC \uB20C\uB7EC \uCDE8\uC18C\uD560
+    \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 --- !u!1 &7448251111093678859
 GameObject:
   m_ObjectHideFlags: 0
